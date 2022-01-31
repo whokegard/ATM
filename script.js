@@ -36,6 +36,10 @@ const account = {
     return;
   },
   //Error function that handles both deposit & withdrawal errors.
+  //Two parameters for checking deposit or withdrawal errors.
+  //Action 1 handles deposit errors.
+  //Action 2 handles withdrawal errors.
+  //If an error is found the function will return true.
   accountError: function (money, action) {
     //Deposit errors.
     let error = false;
@@ -65,7 +69,6 @@ const account = {
         if (money > this.balance) {
           alert("Not enough balance!");
           error = true;
-          atm();
         }
         if (money <= 0) {
           alert(`You can't withdrawal ${money}$`);
@@ -79,7 +82,7 @@ const account = {
   },
 };
 
-//Switch menu, it's easier to read and understand than a if/else menu.
+//Switch menu, it's easier to read and to understand than a if/else menu.
 function atm() {
   running = true;
   while (running) {
