@@ -35,6 +35,7 @@ const account = {
     running = false;
     return;
   },
+  //Error function that handles both deposit & withdrawal errors.
   accountError: function (money, action) {
     //Deposit errors.
     let error = false;
@@ -78,6 +79,7 @@ const account = {
   },
 };
 
+//Switch menu, it's easier to read and understand than a if/else menu.
 function atm() {
   running = true;
   while (running) {
@@ -96,7 +98,7 @@ function atm() {
         account.deposit();
         break;
       case 3:
-        //Unable to enter case 3 if your balance is at or below 0.
+        //Unable to enter case 3 function if your balance is at or below 0.
         if (account.balance <= 0) {
           alert("You don't have any money to withdrawal.");
           break;
